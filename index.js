@@ -47,8 +47,7 @@ app.put('/todos/:id', async(req,res)=>{
     await Todo.findByIdAndUpdate({_id: id}, req.body)
     res.json(req.body);
 })
-// https://todoapp-rhrd5j3h.b4a.run/
-// 
+
 
 app.listen(3000, () => {
     mongoose.connect('mongodb://localhost:27017/todolist')
