@@ -1,3 +1,5 @@
+
+
 import express from 'express'
 import mongoose from 'mongoose'
 import  cors from 'cors'
@@ -24,7 +26,7 @@ const Todo = mongoose.model('Todo', todoSchema)
  app.post('/todos', async (req,res)=>{
     const reqBody = req.body;
     const result = await Todo.insertMany(reqBody);
-    res.json({ message: "Bulk tasks added successfully!", data: result }); 
+    res.json({ message: "Bulk tasks added successfully! a", data: result }); 
 
  })
  app.get('/todos', async (req, res) => {
@@ -50,8 +52,8 @@ app.put('/todos/:id', async(req,res)=>{
 
 
 app.listen(3000, () => {
-    mongoose.connect('mongodb://localhost:27017/jansantodolist')
+    mongoose.connect('mongodb://localhost:27017/todolist')
         .then(() => console.log("DB connected"))
         .catch(err => console.log(err));  
-          console.log('server is running on http://localhost:3001/')
+          console.log('server is running on http://localhost:3000/')
 })
